@@ -52,4 +52,29 @@
 
     </div>
 </body>
+<script>
+    let display=document.getElementById("display");
+    let mybtn=document.querySelectorAll("button")
+    let curr_dis="";
+    for(let item of mybtn){
+        item.addEventListener("click",(e)=>{
+            mybtntext=e.target.innerText;
+            console.log(mybtntext);
+            if(mybtntext=='c'){
+                curr_dis="";
+                display.value=curr_dis;
+            }
+            else if(mybtntext=='=')
+            {
+                display.value=eval(curr_dis);
+
+            }
+            else{
+                curr_dis=curr_dis+mybtntext;
+                display.value=curr_dis;
+            }
+        })
+    }
+    
+</script>
 </html>
